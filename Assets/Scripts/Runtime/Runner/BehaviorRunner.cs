@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace BehaviorTree
@@ -20,15 +21,43 @@ namespace BehaviorTree
         {
             _graph = _graph.Clone();
 
+            SetRoot();
+            SetEveryNodeParent();
+            CallOnAwake();
+            Run();
+        }
+
+        /// <summary>
+        /// 全ノードの親を設定する
+        /// </summary>
+        private void SetEveryNodeParent()
+        {
+            foreach (var node in _graph.nodes)
+            {
+                var behavioreNode = node as Node;
+                if (behavioreNode is Root)
+                    continue;
+                behavioreNode.Parent = behavioreNode.GetInputNodes().First() as Node;
+            }
+        }
+
+        /// <summary>
+        /// 全ノードのAwake処理を行う。これは一度しか呼ばれない
+        /// </summary>
+        private void CallOnAwake()
+        {
             foreach (var node in _graph.nodes)
             {
                 var behavioreNode = node as Node;
                 behavioreNode.OnAwake();
             }
-            _root = _graph.nodes.Find(n => n is Root) as Root;
-            Run();
         }
-        
+
+        private void SetRoot()
+        {
+            _root = _graph.nodes.Find(n => n is Root) as Root;
+        }
+
         /// <summary>
         /// 実際にビヘイビアツリーを実行する内部関数
         /// </summary>

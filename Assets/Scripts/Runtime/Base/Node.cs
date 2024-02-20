@@ -22,7 +22,7 @@ namespace BehaviorTree
     public abstract class Node : BaseNode
     {
         [Input(name = "Parent"), Vertical]public Node Parent;
-        [TextArea(1, 3)] public string Description;
+        private string Description;
         protected BehavioreNodeState State = BehavioreNodeState.Waiting;
 
         public BehavioreNodeState Update()
