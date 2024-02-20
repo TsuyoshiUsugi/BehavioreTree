@@ -1,21 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using GraphProcessor;
 using UnityEngine;
 
 namespace BehaviorTree
 {
-    public class ExposedPropertyGraphTest : BehaviorTreeGraph
+    public class ExposedPropertyGraphTest : BaseGraph
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+    
     }
 }

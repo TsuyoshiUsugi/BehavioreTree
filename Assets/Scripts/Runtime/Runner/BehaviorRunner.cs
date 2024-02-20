@@ -35,7 +35,7 @@ namespace BehaviorTree
             foreach (var node in _graph.nodes)
             {
                 var behavioreNode = node as Node;
-                if (behavioreNode is Root)
+                if (behavioreNode is Root || behavioreNode is not Node)
                     continue;
                 behavioreNode.Parent = behavioreNode.GetInputNodes().First() as Node;
             }
