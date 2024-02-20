@@ -135,10 +135,10 @@ MonoBehaviour:
         computeOrder: 2
         position:
           serializedVersion: 2
-          x: 477.4225
-          y: 144.1525
-          width: 100
-          height: 100
+          x: 291
+          y: 125.485016
+          width: 90
+          height: 54
         expanded: 0
         debug: 0
         nodeLock: 0
