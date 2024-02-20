@@ -17,30 +17,39 @@ MonoBehaviour:
   - rid: 3100971800476254219
   - rid: 3100971800476254221
   - rid: 3100971800476254222
-  - rid: 3100971800476254223
+  - rid: 3100971800476254224
+  - rid: 3100971800476254225
   edges:
-  - GUID: b9073e5c-ff59-4f39-acde-c78b3c65d233
+  - GUID: b9a87ed3-2e60-4a0c-8f7a-41d9f363de7b
     owner: {fileID: 11400000}
-    inputNodeGUID: 1ed5ea21-33c8-4caf-bf35-de52dee3ad18
+    inputNodeGUID: 73cf23ca-3acb-4a02-9527-117701ff3558
     outputNodeGUID: c2cbfab8-3275-43f3-8358-f83e7caa7afb
     inputFieldName: Parent
     outputFieldName: Child
     inputPortIdentifier: 
     outputPortIdentifier: 
-  - GUID: 3de09847-eb2b-4361-a0dd-e9955b3826e5
+  - GUID: 78207432-e86c-4068-baff-50d2e551300d
     owner: {fileID: 11400000}
     inputNodeGUID: f80ece87-5549-4f80-8c01-9c411ff1a7c2
-    outputNodeGUID: 1ed5ea21-33c8-4caf-bf35-de52dee3ad18
+    outputNodeGUID: 734dd20f-6465-49c1-8cfb-ee973ead5efe
     inputFieldName: Parent
     outputFieldName: Children
     inputPortIdentifier: 
     outputPortIdentifier: 
-  - GUID: ce386a19-93e8-4004-87b0-76cb38255efb
+  - GUID: 850f8faa-8349-447e-b24d-7c5d59110751
     owner: {fileID: 11400000}
     inputNodeGUID: daba60ea-6438-4197-a928-ccb0c78b201e
-    outputNodeGUID: 1ed5ea21-33c8-4caf-bf35-de52dee3ad18
+    outputNodeGUID: 734dd20f-6465-49c1-8cfb-ee973ead5efe
     inputFieldName: Parent
     outputFieldName: Children
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: fa719c79-4d04-48cc-97fe-b63f41485da8
+    owner: {fileID: 11400000}
+    inputNodeGUID: 734dd20f-6465-49c1-8cfb-ee973ead5efe
+    outputNodeGUID: 73cf23ca-3acb-4a02-9527-117701ff3558
+    inputFieldName: Parent
+    outputFieldName: Child
     inputPortIdentifier: 
     outputPortIdentifier: 
   groups: []
@@ -50,8 +59,8 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 51, y: 13, z: 0}
-  scale: {x: 1, y: 1, z: 1}
+  position: {x: -19, y: 139, z: 0}
+  scale: {x: 0.7561437, y: 0.7561437, z: 1}
   references:
     version: 2
     RefIds:
@@ -63,20 +72,19 @@ MonoBehaviour:
         computeOrder: 0
         position:
           serializedVersion: 2
-          x: 256
-          y: -42.04001
+          x: 291
+          y: -178.87996
           width: 136
           height: 120
         expanded: 0
         debug: 0
         nodeLock: 0
-        Description: 
     - rid: 3100971800476254221
       type: {class: Log, ns: BehaviorTree, asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: daba60ea-6438-4197-a928-ccb0c78b201e
-        computeOrder: 2
+        computeOrder: 3
         position:
           serializedVersion: 2
           x: 408
@@ -86,14 +94,13 @@ MonoBehaviour:
         expanded: 0
         debug: 0
         nodeLock: 0
-        Description: 
         _message: Test2
     - rid: 3100971800476254222
       type: {class: Log, ns: BehaviorTree, asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: f80ece87-5549-4f80-8c01-9c411ff1a7c2
-        computeOrder: 3
+        computeOrder: 4
         position:
           serializedVersion: 2
           x: 41
@@ -103,21 +110,35 @@ MonoBehaviour:
         expanded: 0
         debug: 0
         nodeLock: 0
-        Description: 
         _message: Test1
-    - rid: 3100971800476254223
-      type: {class: Sequencer, ns: BehaviorTree, asm: Assembly-CSharp}
+    - rid: 3100971800476254224
+      type: {class: Repeater, ns: BehaviorTree, asm: Assembly-CSharp}
       data:
         nodeCustomName: 
-        GUID: 1ed5ea21-33c8-4caf-bf35-de52dee3ad18
+        GUID: 73cf23ca-3acb-4a02-9527-117701ff3558
         computeOrder: 1
         position:
           serializedVersion: 2
-          x: 291.24
-          y: 104
-          width: 136
-          height: 114
+          x: 276
+          y: -59
+          width: 151
+          height: 139
         expanded: 0
         debug: 0
         nodeLock: 0
-        Description: 
+        _repeatCount: 2
+    - rid: 3100971800476254225
+      type: {class: Selector, ns: BehaviorTree, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 734dd20f-6465-49c1-8cfb-ee973ead5efe
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 477.4225
+          y: 144.1525
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
