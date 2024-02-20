@@ -44,7 +44,7 @@ namespace BehaviorTree
         /// <summary>
         /// こちらはビヘイビアツリー起動時に1度だけ呼ばれる
         /// </summary>
-        protected abstract void OnAwake();
+        public abstract void OnAwake();
         /// <summary>
         /// こちらはステートがWaitingの時に1度だけ呼ばれる
         /// </summary>

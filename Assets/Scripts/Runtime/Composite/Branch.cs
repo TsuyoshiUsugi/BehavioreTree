@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using GraphProcessor;
 using UnityEngine;
 
@@ -15,9 +16,17 @@ namespace BehaviorTree
         protected List<Node> _children = new List<Node>();
         protected int _currentChildIndex = 0;
 
-        protected override void OnAwake()
+        public override void OnAwake()
         {
-            _children = GetOutputNodes() as List<Node>;
+            //　子ノードを取得し、左から順番に子ノードのリストへ格納
+            var outputNodes = GetOutputNodes().OrderBy(x => x.position.x);
+            foreach (var outputNode in outputNodes)
+            {
+                if (outputNode is Node)
+                {
+                    _children.Add(outputNode as Node);
+                }
+            }
         }
         
         protected override void OnStart()

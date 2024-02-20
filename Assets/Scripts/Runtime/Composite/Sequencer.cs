@@ -14,8 +14,6 @@ namespace BehaviorTree
     [Serializable, NodeMenuItem("Composite/Sequencer")]
     public class Sequencer : Branch
     {
-
-
         protected override BehavioreNodeState OnUpdate()
         {
             if (_children == null || _children.Count == 0)

@@ -10,7 +10,7 @@ namespace BehaviorTree
     {
         [Output(name = "Child", allowMultiple = false), Vertical] public Node Child;
 
-        protected override void OnAwake()
+        public override void OnAwake()
         {
             if (Child == null) Child = GetOutputNodes().First() as Node;
         }

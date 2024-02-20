@@ -13,7 +13,7 @@ namespace BehaviorTree
     public class Log : Action
     {
         [SerializeField, TextArea(1, 1)] private string _message;
-        protected override void OnAwake()
+        public override void OnAwake()
         {
             
         }

@@ -19,6 +19,12 @@ namespace BehaviorTree
         public void RunTree()
         {
             _graph = _graph.Clone();
+
+            foreach (var node in _graph.nodes)
+            {
+                var behavioreNode = node as Node;
+                behavioreNode.OnAwake();
+            }
             _root = _graph.nodes.Find(n => n is Root) as Root;
             Run();
         }
