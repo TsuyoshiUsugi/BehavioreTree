@@ -1,10 +1,10 @@
 using GraphProcessor;
 using UnityEngine;
 using System.Linq;
+using UnityEditor.Callbacks;
 #if UNITY_EDITOR
 using UnityEditor;
-using UnityEditor.Callbacks;
-
+#endif
 namespace BehaviorTree
 {
     /// <summary>
@@ -37,6 +37,13 @@ namespace BehaviorTree
                 AddNode(BaseNode.CreateFromType<Root>(Vector2.zero));
             }
         }
-#endif
+        
+        public BehaviorTreeGraph Clone()
+        {
+            var clone = Instantiate(this);
+            clone.name = name;
+            clone.hideFlags = HideFlags.None;
+            return clone;
+        }
     }
 }
