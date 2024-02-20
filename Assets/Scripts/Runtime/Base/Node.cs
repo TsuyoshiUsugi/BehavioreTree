@@ -1,4 +1,6 @@
 using GraphProcessor;
+using Unity.VisualScripting;
+using UnityEngine;
 
 namespace BehaviorTree
 {
@@ -20,11 +22,9 @@ namespace BehaviorTree
             Running,
         }
         
-        [Input(name = "Parent"), Vertical] public Node Parent;
-        private string _name;
+        [Input(name = "Parent"), Vertical]public Node Parent;
         public string Description;
         protected BehavioreNodeState State = BehavioreNodeState.Waiting;
-        protected Node() {_name = GetType().ToString();}
 
         public BehavioreNodeState Update()
         {

@@ -1,14 +1,14 @@
 using System;
 using GraphProcessor;
+using UnityEngine;
 
 namespace BehaviorTree
 {
     [Serializable, NodeMenuItem("Root")]
     public class Root : Node
     {
-        private new Node Parent;
-        public Node Child;
-        
+        [Output(name = "Child"), Vertical] public Node Child;
+
         protected override void OnStart()
         {
             
