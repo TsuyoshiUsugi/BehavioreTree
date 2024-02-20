@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.alelievr.node-graph-processor": {
+      "version": "1.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.mackysoft.serializereference-extensions": {
+      "version": "https://github.com/mackysoft/Unity-SerializeReferenceExtensions.git?path=Assets/MackySoft/MackySoft.SerializeReferenceExtensions",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "301cb4b12cf419c60509836d23d2bd482c131368"
+    },
     "com.unity.collab-proxy": {
       "version": "2.2.0",
       "depth": 0,
