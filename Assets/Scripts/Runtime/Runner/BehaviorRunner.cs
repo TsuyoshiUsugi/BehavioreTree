@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using GraphProcessor;
 using UnityEngine;
 
 namespace BehaviorTree
@@ -22,9 +23,21 @@ namespace BehaviorTree
             _graph = _graph.Clone();
 
             SetRoot();
+            SetDefaultNodeProcess();
             SetEveryNodeParent();
             CallOnAwake();
             Run();
+        }
+
+        /// <summary>
+        /// 自作のノード以外の初期化処理を行う
+        /// </summary>
+        private void SetDefaultNodeProcess()
+        {
+            foreach (var node in _graph.nodes)
+            {
+                node.OnProcess();
+            }
         }
 
         /// <summary>
@@ -34,11 +47,23 @@ namespace BehaviorTree
         {
             foreach (var node in _graph.nodes)
             {
+                //TODO: ここでどこにもつながってないノードがあるとInvalidエラー
                 var behavioreNode = node as Node;
-                if (behavioreNode is Root || behavioreNode is not Node)
-                    continue;
+                if (IsNotBehaviorNode(behavioreNode)) continue;
+                if (behavioreNode is Root) continue;
                 behavioreNode.Parent = behavioreNode.GetInputNodes().First() as Node;
             }
+        }
+
+        private static bool IsNotBehaviorNode(Node behavioreNode)
+        {
+            if (behavioreNode is not Node)
+            {
+                // Rootノードとノード以外のものは親を持たない
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -49,6 +74,7 @@ namespace BehaviorTree
             foreach (var node in _graph.nodes)
             {
                 var behavioreNode = node as Node;
+                if (IsNotBehaviorNode(behavioreNode)) continue;
                 behavioreNode.OnAwake();
             }
         }

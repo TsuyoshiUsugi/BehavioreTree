@@ -14,13 +14,16 @@ namespace BehaviorTree
     [Serializable, NodeMenuItem("Action/MoveToTarget")]
     public class MoveToTarget : Action
     {
-        [Input(name = "Owner")] public GameObject Owner;
-        [Input(name = "Target")] public GameObject Target;
+        // [Input(name = "Owner")] public GameObject Owner;
+        // [Input(name = "Target")] public GameObject Target;
+        private GameObject Owner;
+        private GameObject Target;
         private NavMeshAgent _agent;
         
         public override void OnAwake()
         {
-            Owner = GetInputNodes().First() as GameObject;
+            Owner = GameObject.FindObjectOfType<NavMeshAgent>().gameObject;
+            Target = GameObject.FindObjectOfType<TestTarget>().gameObject;
             _agent = Owner.GetComponent<NavMeshAgent>();
         }
 
@@ -31,7 +34,7 @@ namespace BehaviorTree
 
         protected override BehavioreNodeState OnUpdate()
         {
-            if (!_agent.hasPath)
+            if (_agent == null)
             {
                 return BehavioreNodeState.Failure;
             }

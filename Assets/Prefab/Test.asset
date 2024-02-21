@@ -18,8 +18,9 @@ MonoBehaviour:
   - rid: 3100971800476254473
   - rid: 3100971800476254490
   - rid: 3100971800476254491
+  - rid: 3100971800476254644
   edges:
-  - GUID: 23bc29df-772e-4bff-9d9b-6f5a256f16b0
+  - GUID: b3209a1f-f1f6-45f7-b4e8-8f351f51b792
     owner: {fileID: 11400000}
     inputNodeGUID: 89087771-fcd1-4bb5-a325-1353c010d90b
     outputNodeGUID: c2cbfab8-3275-43f3-8358-f83e7caa7afb
@@ -27,29 +28,13 @@ MonoBehaviour:
     outputFieldName: Child
     inputPortIdentifier: 
     outputPortIdentifier: 
-  - GUID: 4a2e91bb-99d0-4b2a-be48-db2c7f560d57
-    owner: {fileID: 11400000}
-    inputNodeGUID: 89087771-fcd1-4bb5-a325-1353c010d90b
-    outputNodeGUID: d52b6d0f-9cb8-4440-9ff0-ef3c51925226
-    inputFieldName: Owner
-    outputFieldName: output
-    inputPortIdentifier: 
-    outputPortIdentifier: output
-  - GUID: 2bc69a41-64e4-4f64-8d57-31d40dfaa47b
-    owner: {fileID: 11400000}
-    inputNodeGUID: 89087771-fcd1-4bb5-a325-1353c010d90b
-    outputNodeGUID: 3ce7f8bd-39a4-47da-a07f-f32224f4816a
-    inputFieldName: Target
-    outputFieldName: output
-    inputPortIdentifier: 
-    outputPortIdentifier: output
   groups: []
   stackNodes: []
   pinnedElements:
   - position:
       serializedVersion: 2
-      x: 52
-      y: 52
+      x: 0
+      y: 247
       width: 390
       height: 333
     opened: 1
@@ -72,7 +57,7 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 390, y: 316, z: 0}
+  position: {x: 495, y: 317, z: 0}
   scale: {x: 0.8695652, y: 0.8695652, z: 1}
   references:
     version: 2
@@ -85,8 +70,8 @@ MonoBehaviour:
         computeOrder: 0
         position:
           serializedVersion: 2
-          x: 325.5
-          y: -196.25
+          x: 348.00012
+          y: -279.5
           width: 69
           height: 54
         expanded: 0
@@ -110,7 +95,7 @@ MonoBehaviour:
       type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
         isHidden: 0
-        expanded: 1
+        expanded: 0
         guid: 3f1e173c-a96d-4fb9-b371-b837297fa408
     - rid: 3100971800476254318
       type: {class: GameObjectParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
@@ -137,7 +122,7 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: 89087771-fcd1-4bb5-a325-1353c010d90b
-        computeOrder: 3
+        computeOrder: 1
         position:
           serializedVersion: 2
           x: 291
@@ -147,8 +132,6 @@ MonoBehaviour:
         expanded: 0
         debug: 0
         nodeLock: 0
-        Owner: {fileID: 0}
-        Target: {fileID: 0}
     - rid: 3100971800476254490
       type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
@@ -157,8 +140,8 @@ MonoBehaviour:
         computeOrder: 2
         position:
           serializedVersion: 2
-          x: 75.90001
-          y: 4.999998
+          x: 104.99998
+          y: 28.00002
           width: 73
           height: 37
         expanded: 0
@@ -171,7 +154,7 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: 3ce7f8bd-39a4-47da-a07f-f32224f4816a
-        computeOrder: 1
+        computeOrder: 3
         position:
           serializedVersion: 2
           x: 104.65002
@@ -183,3 +166,18 @@ MonoBehaviour:
         nodeLock: 0
         parameterGUID: cf061f25-c6f0-41a3-b565-87f0f61d0376
         accessor: 0
+    - rid: 3100971800476254644
+      type: {class: Sequencer, ns: BehaviorTree, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: e4a6329e-c41c-42ab-90fd-a54a5208f793
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 235.75005
+          y: -149.5
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
