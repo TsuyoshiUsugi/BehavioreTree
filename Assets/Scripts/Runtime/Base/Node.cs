@@ -23,7 +23,7 @@ namespace BehaviorTree
     {
         [Input(name = "Parent"), Vertical]public Node Parent;
         private string Description;
-        protected BehavioreNodeState State = BehavioreNodeState.Waiting;
+        public BehavioreNodeState State = BehavioreNodeState.Waiting;
 
         public BehavioreNodeState Update()
         {

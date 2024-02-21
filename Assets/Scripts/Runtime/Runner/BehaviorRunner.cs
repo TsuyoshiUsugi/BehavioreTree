@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,19 +15,24 @@ namespace BehaviorTree
     {
         [SerializeField] private BehaviorTreeGraph _graph;
         private Node _root;
-        
+
+        private void Awake()
+        {
+            
+        }
+
         /// <summary>
-        /// 外部からビヘイビアツリーを実行する関数
+        /// 外部からビヘイビアツリーを呼び出す処理
+        /// 一度呼んでいる場合は初期化処理は行わない
         /// </summary>
         public void RunTree()
         {
             _graph = _graph.Clone();
-
             SetRoot();
             SetDefaultNodeProcess();
             SetEveryNodeParent();
             CallOnAwake();
-            Run();
+            StartCoroutine(UpdateTree());
         }
 
         /// <summary>
@@ -51,7 +57,7 @@ namespace BehaviorTree
                 var behavioreNode = node as Node;
                 if (IsNotBehaviorNode(behavioreNode)) continue;
                 if (behavioreNode is Root) continue;
-                behavioreNode.Parent = behavioreNode.GetInputNodes().First() as Node;
+                if (behavioreNode != null) behavioreNode.Parent = behavioreNode.GetInputNodes().First() as Node;
             }
         }
 
@@ -84,21 +90,26 @@ namespace BehaviorTree
             _root = _graph.nodes.Find(n => n is Root) as Root;
         }
 
+        private int test = 0;
+
         /// <summary>
         /// 実際にビヘイビアツリーを実行する内部関数
         /// </summary>
-        private void Run()
+        private IEnumerator UpdateTree()
         {
+            foreach (var node in _graph.nodes)
+            {
+                var treeNode = node as Node;
+                if (IsNotBehaviorNode(treeNode)) continue;
+                treeNode.State = BehavioreNodeState.Waiting;
+            }
             Stack<Node> stack = new Stack<Node>();
             stack.Push(_root);
             while (stack.Count > 0)
             {
-                Node node = stack.Peek();
-                BehavioreNodeState state = node.Update();
-                switch (state)
+                var node = stack.Peek();
+                switch (node.Update())
                 {
-                    case BehavioreNodeState.Waiting:
-                        break;
                     case BehavioreNodeState.Success:
                         stack.Pop();
                         break;
@@ -108,6 +119,8 @@ namespace BehaviorTree
                     case BehavioreNodeState.Running:
                         break;
                 }
+
+                yield return null;
             }
         }
     }

@@ -12,11 +12,5 @@ namespace BehaviorTree
         {
             behaviorRunner.RunTree();
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }

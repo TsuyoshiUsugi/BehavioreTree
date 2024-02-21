@@ -15,26 +15,27 @@ namespace BehaviorTree
     public class MoveToTarget : Action
     {
         // [Input(name = "Owner")] public GameObject Owner;
-        // [Input(name = "Target")] public GameObject Target;
+        [Input(name = "Target")] public GameObject Target;
         private GameObject Owner;
-        private GameObject Target;
+        //private GameObject Target;
         private NavMeshAgent _agent;
         
         public override void OnAwake()
         {
             Owner = GameObject.FindObjectOfType<NavMeshAgent>().gameObject;
-            Target = GameObject.FindObjectOfType<TestTarget>().gameObject;
+            
             _agent = Owner.GetComponent<NavMeshAgent>();
         }
 
         protected override void OnStart()
         {
-            _agent.destination = Target.transform.position;
+            if (Target == null) Target = GameObject.FindObjectOfType<TestTarget>().gameObject;
+            _agent.SetDestination(Target.transform.position);
         }
 
         protected override BehavioreNodeState OnUpdate()
         {
-            if (_agent == null)
+            if (_agent == null || Target == null)
             {
                 return BehavioreNodeState.Failure;
             }
