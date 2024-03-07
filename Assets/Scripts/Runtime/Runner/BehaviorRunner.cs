@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using GraphProcessor;
 using UnityEngine;
 
 namespace BehaviorTree
@@ -15,11 +14,6 @@ namespace BehaviorTree
     {
         [SerializeField] private BehaviorTreeGraph _graph;
         private Node _root;
-
-        private void Awake()
-        {
-            
-        }
 
         /// <summary>
         /// 外部からビヘイビアツリーを呼び出す処理

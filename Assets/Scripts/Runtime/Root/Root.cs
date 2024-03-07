@@ -23,7 +23,6 @@ namespace BehaviorTree
         protected override BehavioreNodeState OnUpdate()
         {
             State = Child.Update();
-            //Debug.Log($"Current = {State}");
             return State;
         }
 

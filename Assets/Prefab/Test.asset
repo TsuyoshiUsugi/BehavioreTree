@@ -144,8 +144,8 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 737, y: 338, z: 0}
-  scale: {x: 0.7561437, y: 0.7561437, z: 1}
+  position: {x: 684, y: 349, z: 0}
+  scale: {x: 0.65751624, y: 0.65751624, z: 1}
   references:
     version: 2
     RefIds:
@@ -157,10 +157,10 @@ MonoBehaviour:
         computeOrder: 0
         position:
           serializedVersion: 2
-          x: 348.00012
-          y: -279.5
-          width: 69
-          height: 54
+          x: 331.99997
+          y: -416.065
+          width: 200
+          height: 74
         expanded: 0
         debug: 0
         nodeLock: 0
@@ -230,10 +230,10 @@ MonoBehaviour:
         computeOrder: 1
         position:
           serializedVersion: 2
-          x: 332.00006
-          y: -189.15
-          width: 104
-          height: 54
+          x: 330
+          y: -224.97006
+          width: 200
+          height: 74
         expanded: 0
         debug: 0
         nodeLock: 0
@@ -246,8 +246,8 @@ MonoBehaviour:
         computeOrder: 2
         position:
           serializedVersion: 2
-          x: -25.999985
-          y: -115.00004
+          x: -79.19251
+          y: -78
           width: 200
           height: 74
         expanded: 0
@@ -262,8 +262,8 @@ MonoBehaviour:
         computeOrder: 3
         position:
           serializedVersion: 2
-          x: 76.49998
-          y: 35.999973
+          x: 62.452522
+          y: 63.000004
           width: 195
           height: 101
         expanded: 0
@@ -296,8 +296,8 @@ MonoBehaviour:
         computeOrder: 6
         position:
           serializedVersion: 2
-          x: 639.54254
-          y: -77.99998
+          x: 705.0002
+          y: -78.00001
           width: 200
           height: 74
         expanded: 0
@@ -312,8 +312,8 @@ MonoBehaviour:
         computeOrder: 5
         position:
           serializedVersion: 2
-          x: 817.5901
-          y: 121.499954
+          x: 832.00006
+          y: 122.00003
           width: 73
           height: 37
         expanded: 0
@@ -329,8 +329,8 @@ MonoBehaviour:
         computeOrder: 8
         position:
           serializedVersion: 2
-          x: -329.7975
-          y: 126.49997
+          x: -298.99988
+          y: 121.99996
           width: 73
           height: 37
         expanded: 0
@@ -346,8 +346,8 @@ MonoBehaviour:
         computeOrder: 4
         position:
           serializedVersion: 2
-          x: 137.50005
-          y: 164
+          x: 257.00012
+          y: 122.00001
           width: 73
           height: 37
         expanded: 0

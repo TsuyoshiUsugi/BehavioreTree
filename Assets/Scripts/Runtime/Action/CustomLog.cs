@@ -14,11 +14,12 @@ namespace BehaviorTree
         
         public override void OnAwake()
         {
+            
         }
 
         protected override void OnStart()
         {
-            //Debug.Log(Target.name);
+            Debug.Log(Target.name);
         }
 
         protected override BehavioreNodeState OnUpdate()
@@ -28,6 +29,7 @@ namespace BehaviorTree
 
         protected override void OnEnd()
         {
+            
         }
     }
 }
